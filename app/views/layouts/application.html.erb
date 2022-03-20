@@ -26,16 +26,16 @@
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
             <li class="nav-item">
-              <%= link_to "Home", user_path, class: 'nav-link text-light text-white' %>
+              <%= link_to "Home", users_path, class: 'nav-link text-light text-white' %>
             </li>
             <li class="nav-item">
-              <%= link_to "User", new_book_path, class: 'nav-link text-light text-white' %>
+              <%= link_to "User", user_path(current_user.id), class: 'nav-link text-light text-white' %>
             </li>
             <li class="nav-item">
               <%= link_to "Books", books_path, class: 'nav-link text-light text-white' %>
             </li>
             <li class="nav-item">
-              <% link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-light text-white' %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-light text-white' %>
             </li>
             <% else %>
             <li class="nav-item">
@@ -56,6 +56,9 @@
         </div>
       </nav>
     </header>
+    <div class="notice">
+    <%= notice %>
+    </div>
     <%= yield %>
     <footer>
       <div class="continer mt-5">
