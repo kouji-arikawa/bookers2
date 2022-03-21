@@ -11,15 +11,17 @@
           <thead>
             <tr>
               <td>
+                <%= link_to user_path(@user) do %>
                 <% if @user.profile_image.attached? %>
-                  <%= image_tag @user.profile_image, size: "40×40" %>
+                  <%= image_tag @user.get_profile_image(40,40) %>
                 <% else %>
-                  <%= image_tag 'no_image', size: "40×40" %>
+                  <%= image_tag 'no_image' %>
                 <% end %>
                 <br>
                 <%= @user.name %>
+                <% end %>
               </td>
-              <td><%= @books.title %></td>
+              <td><%= link_to @books.title, book_path(@books.id) %></td>
               <td><%= @books.body %></td>
               <td>
               <% if @books.user == current_user %>

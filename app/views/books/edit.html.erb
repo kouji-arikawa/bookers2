@@ -3,7 +3,7 @@
     <% if @book.errors.any? %>
       <%= @book.errors.count %>件のerrorが発生しました
     <ul>
-      <% @user.errors.full_messages.each do |message| %>
+      <% @book.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
     </ul>
