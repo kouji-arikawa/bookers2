@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+.notice {
+  color: green;
+}
+
+.nav-item {
+  margin: 5px;
+  color: white;
+}
